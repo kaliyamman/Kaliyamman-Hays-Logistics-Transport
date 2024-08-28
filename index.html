@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Murugan M">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaliyamman Hays Logistics & Transport</title>
+    <link rel="icon" href="img/kaliyamman transport-logo.png">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --background-color: #ecf0f1;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        /* Importing Google font - Open Sans */
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+
+        body {
+
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            
+            padding: 0 10px;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;            
+        }
+
+
+        .navbar {
+            display: flex;
+            padding: 22px 0;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        .navbar .hamburger-btn {
+            display: none;
+            /* Initially hidden */
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .navbar .logo {
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .navbar .logo img {
+            width: 40px;
+            border-radius: 50%;
+        }
+
+        .navbar .logo h2 {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.7rem;
+        }
+
+        .navbar .links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .navbar .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: none;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .navbar .links a {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.1s ease;
+        }
+
+        .navbar .links a:hover {
+            color: #f0ff19;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .product-view,
+        .contact-form,
+        .address-container,
+        .about-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .product {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            width: 300px;
+            height: 400px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .product h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            overflow: auto;
+        }
+
+        .view-details {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-details:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* About Us section styling */
+        .about-us {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            margin-right: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text p {
+            margin: 0;
+            color: #555;
+        }
+
+        .about-text ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .about-text li {
+            margin-bottom: 10px;
+        }
+
+        .about-photo {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+
+        .about-photo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Translate checkbox styling */
+        .translate-option {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .translate-option input[type="checkbox"] {
+            accent-color: var(--primary-color);
+            /* Modern way to change checkbox color */
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        .translate-option label {
+            font-size: 1rem;
+            color: var(--secondary-color);
+        }
+
+        /* Hover effect for the checkbox */
+        .translate-option input[type="checkbox"]:hover {
+            cursor: pointer;
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .map-container {
+            height: 300px;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+
+        /* Responsive design */
+        @media (max-width: 950px) {
+
+            .navbar .hamburger-btn {
+                display: block;
+                /* Show the hamburger button on small screens */
+            }
+
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .navbar .logo h2 {
+                font-size: 1.4rem;
+            }
+
+            .navbar .links {
+                position: fixed;
+                top: 0;
+                z-index: 10;
+                left: -100%;
+                display: block;
+                height: 100vh;
+                width: 100%;
+                padding-top: 60px;
+                text-align: center;
+                background: #fff;
+                transition: 0.2s ease;
+            }
+
+            .navbar .links.show-menu {
+                left: 0;
+                /* Show the menu when the hamburger button is clicked */
+            }
+
+            .navbar .links a {
+                display: inline-flex;
+                margin: 20px 0;
+                font-size: 1.2rem;
+                color: #000;
+            }
+
+            .navbar .links a:hover {
+                color: #00BCD4;
+            }
+
+            .navbar .close-btn {
+                display: block;
+                /* Show the close button in the menu */
+            }
+
+            .about-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .about-text,
+            .about-photo {
+                flex: none;
+                width: 100%;
+            }
+
+            .about-photo img {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 760px) {
+
+            .form-popup {
+                width: 95%;
+            }
+
+            .form-box .form-details {
+                display: none;
+            }
+
+            .form-box .form-content {
+                padding: 30px 20px;
+            }
+        }
+
+        .product-container {
+            grid-template-columns: 1fr;
+        }
+
+
+        .about-text {
+            font-size: 0.9rem;
+        }
+
+        .translate-option {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+        @media (max-width: 480px) {
+            .about-text {
+                font-size: 0.8rem;
+                padding: 10px;
+            }
+
+            .translate-option {
+                margin-top: 10px;
+            }
+
+            .translate-option label {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded" style="padding-right: 5px; " id="hamburger-btn">&#9776;</span>
+            <a href="#" class="logo">
+                <img src="img/kaliyamman transport-logo.png" alt="logo">
+                <h2>Kaliyamman Hays Logistics & Transport</h2>
+            </a>
+            <ul class="links" id="navbar-links">
+                <span class="close-btn material-symbols-rounded" id="close-btn">&#10005;</span>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="about-us" id="about">
+            <h2>About Us</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p id="about-content">
+                        Welcome to Kaliyamman Hays Logistics & Transport!
+                        <br><br>
+                        Established in 2015, Kaliyamman Hays Logistics & Transport began as a product-selling company
+                        dedicated to delivering high-quality goods and services. Over the years, we have grown and
+                        transformed into a leading small-scale industry, now specializing in comprehensive
+                        transportation and logistics solutions.
+                        <br><br>
+                        Founded by M. Murugan, our company is built on a foundation of excellence and a steadfast
+                        commitment to customer satisfaction. Under Mr. Murugan's visionary leadership, we have broadened
+                        our scope to offer a diverse range of logistics services tailored to meet the varied needs of
+                        our clients.
+                        <br><br>
+                        Our services include:
+                    <ul>
+                        <li><strong>Efficient Freight Transportation</strong>: Ensuring timely and secure delivery of
+                            goods across various locations.</li>
+                        <li><strong>Logistics Management</strong>: Streamlining processes to optimize supply chain
+                            efficiency.</li>
+                        <li><strong>Express Shipping</strong>: Offering rapid delivery options to meet urgent
+                            requirements.</li>
+                    </ul>
+                    <br>
+                    At Kaliyamman Hays Logistics & Transport, we blend extensive industry experience with cutting-edge
+                    solutions to deliver dependable, timely, and cost-effective logistics services. Our mission is to
+                    support businesses and retailers by offering top-tier transportation solutions while maintaining the
+                    highest levels of professionalism and integrity.
+                    <br><br>
+                    We are dedicated to enhancing your logistics experience and look forward to serving you with
+                    unparalleled expertise and commitment.
+                    </p>
+                    <!--
+                    <div class="translate-option">
+                        <input type="checkbox" id="translate" name="translate">
+                        <label for="translate">Translate</label>
+                    </div> -->
+                </div>
+                <div class="about-photo">
+                    <img src="img/kaliyamman transport-logo.png" alt="Company Photo">
+                </div>
+            </div>
+        </section>
+
+        <section class="product-view">
+            <h2>Product Development Process</h2>
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="img/product3.jpg" alt="Product 1">
+                    <div class="slide-caption">Hay Harvesting</div>
+                </div>
+                <div class="slide fade">
+                    <img src="img/product2.jpg" alt="Product 2">
+                    <div class="slide-caption">Crop Plant</div>
+                </div>
+                <div class="slide fade">
+                    <img src="img/hay-roll.jpg" alt="Product 3">
+                    <div class="slide-caption">Crop harvesting</div>
+                </div>
+                <div class="slide fade">
+                    <img src="img/hay-roll-2.jpg" alt="Product 3">
+                    <div class="slide-caption">Finished Product</div>
+                </div>
+                <div class="slide fade">
+                    <img src="img/hay-roll-3.jpg" alt="Product 3">
+                    <div class="slide-caption">Hay baling</div>
+                </div>
+                <div class="slide fade">
+                    <img src="img/full-load-hay-4.jpg" alt="Product 3">
+                    <div class="slide-caption">Hay transport</div>
+                </div>
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+
+        <section class="contact-form" id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" id="submitButton">Send Message</button>
+            </form>
+            <div id="statusMessage" style="display: none;"></div>
+        </section>
+
+        <section id="address" class="address-container">
+            <h2>Our Address</h2>
+            <p>Kaliyamman Hays Logistics & Transport</p>
+            <p>Krishnagiri, Tamilnadu, 635001</p>
+            <p>Cell: 8838184265</p>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d829.1843725070795!2d78.22810926951949!3d12.523816999234493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDMxJzI1LjciTiA3OMKwMTMnNDMuNSJF!5e1!3m2!1sen!2sin!4v1724766664227!5m2!1sen!2sin"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kaliyamman Hays Logistics & Transport. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+    <script>
+        // Cache DOM elements
+        const translateCheckbox = document.getElementById('translate');
+        const aboutContent = document.getElementById('about-content');
+
+        // Translation texts
+        // const englishText = `Kaliyamman Hays Logistics & Transport was established in 2018, initially as a product-selling company focused on delivering quality goods and services to our valued customers. Over the years, we have evolved into a dynamic small-scale industry specializing in comprehensive transportation and logistics solutions. Founded by M. Murugan, our company prides itself on its commitment to excellence and customer satisfaction. Under M. Murugan’s leadership, we have expanded our offerings to include a wide range of logistics services designed to meet the diverse needs of our clients. From efficient freight transportation and logistics management to secure warehousing and express shipping, we ensure that every aspect of our service is executed with precision and care. At Kaliyamman Hays Logistics & Transport, we combine our deep industry expertise with innovative solutions to provide reliable, timely, and cost-effective logistics services. Our mission is to support businesses and retailers by delivering top-notch transportation solutions while upholding the highest standards of professionalism and integrity.`;
+
+        const tamilText = `காளியம்மன் ஹேஸ் லாஜிஸ்டிக்ஸ் & டிரான்ஸ்போர்ட்டுக்கு வரவேற்கிறோம்! 2018 இல் நிறுவப்பட்ட காளியம்மன் ஹேஸ் லாஜிஸ்டிக்ஸ் & டிரான்ஸ்போர்ட் உயர்தர பொருட்கள் மற்றும் சேவைகளை வழங்குவதற்காக அர்ப்பணிக்கப்பட்ட தயாரிப்பு விற்பனை நிறுவனமாகத் தொடங்கியது. பல ஆண்டுகளாக, நாங்கள் வளர்ந்து, ஒரு முன்னணி சிறிய அளவிலான தொழில்துறையாக மாற்றியுள்ளோம், இப்போது விரிவான போக்குவரத்து மற்றும் தளவாட தீர்வுகளில் நிபுணத்துவம் பெற்றுள்ளோம். எம். முருகனால் நிறுவப்பட்டது, எங்கள் நிறுவனம் சிறப்பான அடித்தளம் மற்றும் வாடிக்கையாளர் திருப்திக்கான உறுதியான அர்ப்பணிப்பின் அடிப்படையில் கட்டமைக்கப்பட்டுள்ளது. திரு. முருகனின் தொலைநோக்கு தலைமையின் கீழ், எங்கள் வாடிக்கையாளர்களின் பல்வேறு தேவைகளைப் பூர்த்தி செய்யும் வகையில் பல்வேறு வகையான தளவாட சேவைகளை வழங்குவதற்கான எங்கள் நோக்கத்தை விரிவுபடுத்தியுள்ளோம். எங்கள் சேவைகளில் பின்வருவன அடங்கும்: திறமையான சரக்கு போக்குவரத்து**: பல்வேறு இடங்களில் பொருட்களை சரியான நேரத்தில் மற்றும் பாதுகாப்பான விநியோகத்தை உறுதி செய்தல். லாஜிஸ்டிக்ஸ் மேலாண்மை**: விநியோகச் சங்கிலி செயல்திறனை மேம்படுத்துவதற்கான செயல்முறைகளை நெறிப்படுத்துதல். எக்ஸ்பிரஸ் ஷிப்பிங்**: அவசரத் தேவைகளைப் பூர்த்தி செய்ய விரைவான விநியோக விருப்பங்களை வழங்குகிறது. காளியம்மன் ஹேஸ் லாஜிஸ்டிக்ஸ் & டிரான்ஸ்போர்ட்டில், நம்பகமான, சரியான நேரத்தில் மற்றும் செலவு குறைந்த லாஜிஸ்டிக்ஸ் சேவைகளை வழங்குவதற்காக விரிவான தொழில் அனுபவத்தை அதிநவீன தீர்வுகளுடன் இணைக்கிறோம். தொழில் மற்றும் ஒருமைப்பாட்டின் மிக உயர்ந்த மட்டத்தைப் பேணுவதன் மூலம் உயர்மட்ட போக்குவரத்து தீர்வுகளை வழங்குவதன் மூலம் வணிகங்கள் மற்றும் சில்லறை விற்பனையாளர்களை ஆதரிப்பதே எங்கள் நோக்கம். உங்கள் தளவாட அனுபவத்தை மேம்படுத்துவதற்கு நாங்கள் அர்ப்பணித்துள்ளோம், மேலும் இணையற்ற நிபுணத்துவம் மற்றும் அர்ப்பணிப்புடன் உங்களுக்கு சேவை செய்ய எதிர்நோக்குகிறோம்.`;
+
+        // Event listener for checkbox change
+        translateCheckbox.addEventListener('change', function () {
+            aboutContent.innerText = this.checked ? tamilText : englishText;
+        });
+    </script>
+
+
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("jiYjqKoIPGoXvhx8z");
+
+            const form = document.getElementById('contactForm');
+            const submitButton = document.getElementById('submitButton');
+            const statusMessage = document.getElementById('statusMessage');
+
+            function showStatus(message, isError = false) {
+                statusMessage.textContent = message;
+                statusMessage.style.display = 'block';
+                statusMessage.style.color = isError ? 'red' : 'green';
+            }
+
+            function resetForm() {
+                form.reset();
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+                statusMessage.style.display = 'none';
+
+                emailjs.sendForm('service_o7qon7k', 'template_pyshzpc', form)
+                    .then(function (response) {
+                        console.log('Sent successfully:', response);
+                        showStatus('Message sent successfully!');
+                        resetForm();
+                    })
+                    .catch(function (error) {
+                        console.error('Failed to send message:', error);
+                        showStatus('Failed to send message. Please try again later.', true);
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                    });
+            });
+        })();
+    </script>
+    <script>
+        // JavaScript to toggle menu visibility
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const navbarLinks = document.getElementById('navbar-links');
+            const closeBtn = document.getElementById('close-btn');
+    
+            // Show menu when hamburger button is clicked
+            hamburgerBtn.addEventListener('click', function() {
+                navbarLinks.classList.add('show-menu');
+            });
+    
+            // Hide menu when close button is clicked
+            closeBtn.addEventListener('click', function() {
+                navbarLinks.classList.remove('show-menu');
+            });
+        });
+    </script>
+</body>
+
+</html>
