@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .section {
+            margin: 20px 0;
+            text-align: justify;
+        }
+
+        .section h2 {
+            color: #007bff;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .team-member {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #007bff;
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+        }
+
+        .contact p {
+            margin: 5px 0;
+        }
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --background-color: #ecf0f1;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        /* Importing Google font - Open Sans */
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+
+        body {
+
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            
+            padding: 0 10px;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;            
+        }
+
+
+        .navbar {
+            display: flex;
+            padding: 22px 0;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        .navbar .hamburger-btn {
+            display: none;
+            /* Initially hidden */
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .navbar .logo {
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .navbar .logo img {
+            width: 40px;
+            border-radius: 50%;
+        }
+
+        .navbar .logo h2 {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.7rem;
+        }
+
+        .navbar .links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .navbar .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: none;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .navbar .links a {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.1s ease;
+        }
+
+        .navbar .links a:hover {
+            color: #f0ff19;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .product-view,
+        .contact-form,
+        .address-container,
+        .about-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .product {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            width: 300px;
+            height: 400px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .product h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            overflow: auto;
+        }
+
+        .view-details {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-details:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* About Us section styling */
+        .about-us {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            margin-right: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text p {
+            margin: 0;
+            color: #555;
+        }
+
+        .about-text ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .about-text li {
+            margin-bottom: 10px;
+        }
+
+        .about-photo {
+            flex: 0 0 300px;
+            text-align: center;
+        }
+
+        .about-photo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Translate checkbox styling */
+        .translate-option {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .translate-option input[type="checkbox"] {
+            accent-color: var(--primary-color);
+            /* Modern way to change checkbox color */
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        .translate-option label {
+            font-size: 1rem;
+            color: var(--secondary-color);
+        }
+
+        /* Hover effect for the checkbox */
+        .translate-option input[type="checkbox"]:hover {
+            cursor: pointer;
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .map-container {
+            height: 300px;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+
+        /* Responsive design */
+        @media (max-width: 950px) {
+
+            .navbar .hamburger-btn {
+                display: block;
+                /* Show the hamburger button on small screens */
+            }
+
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .navbar .logo h2 {
+                font-size: 1.4rem;
+            }
+
+            .navbar .links {
+                position: fixed;
+                top: 0;
+                z-index: 10;
+                left: -100%;
+                display: block;
+                height: 100vh;
+                width: 100%;
+                padding-top: 60px;
+                text-align: center;
+                background: #fff;
+                transition: 0.2s ease;
+            }
+
+            .navbar .links.show-menu {
+                left: 0;
+                /* Show the menu when the hamburger button is clicked */
+            }
+
+            .navbar .links a {
+                display: inline-flex;
+                margin: 20px 0;
+                font-size: 1.2rem;
+                color: #000;
+            }
+
+            .navbar .links a:hover {
+                color: #00BCD4;
+            }
+
+            .navbar .close-btn {
+                display: block;
+                /* Show the close button in the menu */
+            }
+
+            .about-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .about-text,
+            .about-photo {
+                flex: none;
+                width: 100%;
+            }
+
+            .about-photo img {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 760px) {
+
+            .form-popup {
+                width: 95%;
+            }
+
+            .form-box .form-details {
+                display: none;
+            }
+
+            .form-box .form-content {
+                padding: 30px 20px;
+            }
+        }
+
+        .product-container {
+            grid-template-columns: 1fr;
+        }
+
+
+        .about-text {
+            font-size: 0.9rem;
+        }
+
+        .translate-option {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+        @media (max-width: 480px) {
+            .about-text {
+                font-size: 0.8rem;
+                padding: 10px;
+            }
+
+            .translate-option {
+                margin-top: 10px;
+            }
+
+            .translate-option label {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded" style="padding-right: 5px; " id="hamburger-btn">&#9776;</span>
+            <a href="#" class="logo">
+                <img src="img/kaliyamman transport-logo.png" alt="logo">
+                <h2>Kaliyamman Hays Logistics & Transport</h2>
+            </a>
+            <ul class="links" id="navbar-links">
+                <span class="close-btn material-symbols-rounded" id="close-btn">&#10005;</span>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="header">
+            <h1>About Us</h1>
+            <p>Learn more about our company and team</p>
+        </div>
+
+        <div class="section">
+            <h2>Our Company</h2>
+            <p>Established in 2000, Kaliyamman Hays Logistics & Transport began as a product-selling company dedicated to delivering high-quality goods and services. Over the years, we have grown and transformed into a leading small-scale industry, now specializing in comprehensive transportation and logistics solutions.</p>
+            <p>Founded by M. Murugan, our company is built on a foundation of excellence and a steadfast commitment to customer satisfaction. Under Mr. Murugan's visionary leadership, we have broadened our scope to offer a diverse range of logistics services tailored to meet the varied needs of our clients.</p>
+            <p>Our services include:</p>
+            <ul>
+                <li><strong>Efficient Freight Transportation:</strong> Ensuring timely and secure delivery of goods across various locations.</li>
+                <li><strong>Logistics Management:</strong> Streamlining processes to optimize supply chain efficiency.</li>
+                <li><strong>Express Shipping:</strong> Offering rapid delivery options to meet urgent requirements.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Our Mission</h2>
+            <p>At Kaliyamman Hays Logistics & Transport, we blend extensive industry experience with cutting-edge solutions to deliver dependable, timely, and cost-effective logistics services. Our mission is to support businesses and retailers by offering top-tier transportation solutions while maintaining the highest levels of professionalism and integrity.</p>
+        </div>
+
+        <div class="section">
+            <h2>Our Vision</h2>
+            <p>We are dedicated to enhancing your logistics experience and look forward to serving you with unparalleled expertise and commitment. Our vision is to be the preferred logistics partner, known for reliability, innovation, and excellence in service.</p>
+        </div>
+        <div class="section">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="img/owner-img.jpg" alt="Team Member">
+                    <h3>Murugan M</h3>
+                    <p>Founder</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/manager.jpg" alt="Team Member">
+                    <h3>Ariyammal M</h3>
+                    <p>Manager</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/head-marketing.jpg" alt="Team Member">
+                    <h3>Loganathan M</h3>
+                    <p>Chief Operating Officer</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p>Email: kaliyammanhayservices24@gmail.com</p>
+            <p>Phone: +91 8838184265</p>
+        </div>
+    </div>
+    <script>
+        // JavaScript to toggle menu visibility
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const navbarLinks = document.getElementById('navbar-links');
+            const closeBtn = document.getElementById('close-btn');
+    
+            // Show menu when hamburger button is clicked
+            hamburgerBtn.addEventListener('click', function() {
+                navbarLinks.classList.add('show-menu');
+            });
+    
+            // Hide menu when close button is clicked
+            closeBtn.addEventListener('click', function() {
+                navbarLinks.classList.remove('show-menu');
+            });
+        });
+    </script>
+</body>
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Kaliyamman Hays Logistics & Transport. All rights reserved.</p>
+    </div>
+</footer>
+</html>
