@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Murugan M">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>Kaliyamman Hays Logistics & Transport</title>
     <link rel="icon" href="img/kaliyamman transport-logo.png">
     <style>
@@ -688,7 +688,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="order.html">Order</a></li>
                 <li><a href="about.html">About us</a></li>
-                <li><a href="#">Contact us</a></li>
+               <!-- <li><a href="#">Contact us</a></li>-->
             </ul>
         </nav>
     </header>
@@ -849,6 +849,18 @@
     </footer>
 
     <script>
+        document.addEventListener("keydown", function (event) {
+  if (event.ctrlKey && (event.key === "=" || event.key === "-" || event.key === "0")) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener("wheel", function (event) {
+  if (event.ctrlKey) {
+    event.preventDefault();
+  }
+}, { passive: false });
+
         let slideIndex = 1;
         showSlides(slideIndex);
 
