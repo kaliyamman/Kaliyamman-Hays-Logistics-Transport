@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <title>About Us</title>
     <style>
         body {
@@ -591,7 +591,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="order.html">Order</a></li>
                 <li><a href="about.html">About us</a></li>
-                <li><a href="#">Contact us</a></li>
+                <!--<li><a href="#">Contact us</a></li>-->
             </ul>
         </nav>
     </header>
@@ -650,6 +650,18 @@
         </div>
     </div>
     <script>
+        document.addEventListener("keydown", function (event) {
+  if (event.ctrlKey && (event.key === "=" || event.key === "-" || event.key === "0")) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener("wheel", function (event) {
+  if (event.ctrlKey) {
+    event.preventDefault();
+  }
+}, { passive: false });
+
         // JavaScript to toggle menu visibility
         document.addEventListener('DOMContentLoaded', function() {
             const hamburgerBtn = document.getElementById('hamburger-btn');
